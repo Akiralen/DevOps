@@ -1,0 +1,20 @@
+## Install Oh my Posh
+sudo wget https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/posh-linux-amd64 -O /usr/local/bin/oh-my-posh
+sudo chmod +x /usr/local/bin/oh-my-posh
+
+## Download the themes
+mkdir ~/.poshthemes
+wget https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/themes.zip -O ~/.poshthemes/themes.zip
+unzip ~/.poshthemes/themes.zip -d ~/.poshthemes
+chmod u+rw ~/.poshthemes/*.json
+rm ~/.poshthemes/themes.zip
+
+## Font install
+wget "https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Meslo.zip"
+cd ~
+mkdir .fonts
+unzip ~/Downloads/Meslo.zip -d ~/.fonts/Meslo
+fc-cache -fv
+
+## Adding to .bashrc
+set '1ieval "$(oh-my-posh --init --shell bash --config ~/.poshthemes/marcduiker.omp.json)"' ~/.bashrc
