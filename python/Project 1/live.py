@@ -1,5 +1,8 @@
 import logging
 import os,imp
+from tkinter import Misc
+
+from misc import clear_screen
 
 
 ### Loading game objects from files in path to dictioanary
@@ -27,29 +30,45 @@ def load_library(path):
                 ### add new game class to list
                 if not failed:
                     if hasattr(py_mod, 'game'):
-                        try:
-                            class_inst = getattr(py_mod, 'game')()
-                            gamesList.append(class_inst)
-                            logging.info(f"Loading {class_inst} at index {len(gamesList)}")
-                        except:
-                            pass
-    print(len(gamesList))
+                        class_inst = getattr(py_mod, 'game')()
+                        gamesList.append(class_inst)
+                        logging.info(f"Loading {class_inst} at index {len(gamesList)}")
+
     if len(gamesList) < 1:
-        logging.error("No games were loaded")
+        logging.warning(f"No games were loaded ({len(gamesList)})")
     else:
         logging.info(f"({len(gamesList)}) games loaded")
         return gamesList
                 
+def get_dificulty():
+    clear_screen()
+    dificulty = -1
+    while not (dificulty-1) in range(5):
+        try:
+            dificulty = int(input('please select dificulty [1-5]:'))
+        except:
+            dificulty = -1
+    return dificulty
+
 def load_game(path,name):
     games=[]
     games = load_library(path)
-    if len(games) < 1:        
+    try:
+        gamescount = len(games)
+    except:
+        gamescount = 0
+    if gamescount > 0:       
         wins = 0
-        looses = 0
+        loses = 0
+        
         selection = -1
         while not selection == 0:
-            for game,i in games:
-                print(f"{i+1}: {game}")
+            #print menu header
+            print(f"Curent player <{name}>. Wins:{wins} | Loses:{loses}")
+            #print games selection
+            for i in range(gamescount):
+                print(f"{i+1}: {games[i]}")
+            #print exit prompt
             print("----------------------")
             print("0:Exit")
             try:
@@ -57,8 +76,18 @@ def load_game(path,name):
                 if selection in games:
                     pass
             except:
-                pass
-            selection = 0
+                selection = -1
+            if not (selection == 0) and (selection-1) in range(gamescount):
+                dificulty = get_dificulty()
+                logging.info(f'Starting game ({games[selection-1]})')
+                games[selection-1].set_dificulty(dificulty)
+                games[selection-1].play(name)
+                if games[selection-1].get_result():
+                    wins += 1
+                else:
+                    loses += 1
+            else:
+                clear_screen()
     else:
         logging.error("Unable to run. No games exist")
     
@@ -71,5 +100,4 @@ def welcome():
 if __name__ == '__main__':
     logging.error("This module can't be run as main")
 else:
-    #logging.info('Module "live.py" loaded')
-    pass
+    logging.info('Module "live.py" loaded')
