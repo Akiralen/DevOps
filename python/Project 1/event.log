@@ -1,50 +1,43 @@
-[27.05.2022][07:22.09]INFO:Program started
-[27.05.2022][07:22.12]INFO:Loading Guess Game at index 1
-[27.05.2022][07:22.12]INFO:Loading Memory Game at index 2
-[27.05.2022][07:22.12]INFO:Loading Roulete Game at index 3
-[27.05.2022][07:22.12]INFO:(3) games loaded
-[27.05.2022][07:23.16]INFO:Program started
-[27.05.2022][07:23.19]INFO:Loading Guess Game at index 1
-[27.05.2022][07:23.19]INFO:Loading Memory Game at index 2
-[27.05.2022][07:23.19]INFO:Loading Roulete Game at index 3
-[27.05.2022][07:23.19]INFO:(3) games loaded
-[27.05.2022][07:23.24]INFO:Starting game (Memory Game)
-[27.05.2022][07:24.03]INFO:Program started
-[27.05.2022][07:24.05]INFO:Loading Guess Game at index 1
-[27.05.2022][07:24.05]INFO:Loading Memory Game at index 2
-[27.05.2022][07:24.05]INFO:Loading Roulete Game at index 3
-[27.05.2022][07:24.05]INFO:(3) games loaded
-[27.05.2022][07:24.09]INFO:Starting game (Memory Game)
-[27.05.2022][07:24.31]INFO:Program ended.
-[27.05.2022][07:25.17]INFO:Program started
-[27.05.2022][07:25.18]INFO:Loading Guess Game at index 1
-[27.05.2022][07:25.18]INFO:Loading Memory Game at index 2
-[27.05.2022][07:25.18]INFO:Loading Roulete Game at index 3
-[27.05.2022][07:25.18]INFO:(3) games loaded
-[27.05.2022][07:25.22]INFO:Starting game (Guess Game)
-[27.05.2022][07:25.32]INFO:Starting game (Memory Game)
-[27.05.2022][07:25.36]INFO:Starting game (Memory Game)
-[27.05.2022][07:39.47]INFO:Module "live.py" loaded
-[27.05.2022][07:39.47]INFO:Module "live.py" loaded
-[27.05.2022][07:39.47]INFO:Program started
-[27.05.2022][07:39.49]INFO:Module "live.py" loaded
-[27.05.2022][07:39.49]INFO:Loading Guess Game at index 1
-[27.05.2022][07:39.49]INFO:Loading Memory Game at index 2
-[27.05.2022][07:39.49]INFO:Loading Roulete Game at index 3
-[27.05.2022][07:39.49]INFO:(3) games loaded
-[27.05.2022][07:39.53]INFO:Starting game (Guess Game)
-[27.05.2022][07:40.22]INFO:Program ended.
-[27.05.2022][07:43.42]INFO:Module "misc.py" loaded
-[27.05.2022][07:43.42]INFO:Module "live.py" loaded
-[27.05.2022][07:43.42]INFO:Program started
-[27.05.2022][07:43.46]INFO:Module "gamesABC.py" loaded
-[27.05.2022][07:43.46]INFO:Module "guessGame.py" loaded
-[27.05.2022][07:43.46]INFO:Loading Guess Game at index 1
-[27.05.2022][07:43.46]INFO:Module "memoryGame.py" loaded
-[27.05.2022][07:43.46]INFO:Loading Memory Game at index 2
-[27.05.2022][07:43.46]INFO:Module "roulete.py" loaded
-[27.05.2022][07:43.46]INFO:Loading Roulete Game at index 3
-[27.05.2022][07:43.46]INFO:(3) games loaded
-[27.05.2022][07:43.49]INFO:Starting game (Guess Game)
-[27.05.2022][07:44.08]INFO:Starting game (Memory Game)
-[27.05.2022][07:44.14]INFO:Program ended.
+[27.05.2022][08:00.04]INFO:Module "misc.py" loaded
+[27.05.2022][08:00.04]INFO:Module "live.py" loaded
+[27.05.2022][08:00.04]INFO:Program started
+[27.05.2022][08:02.26]INFO:Module "misc.py" loaded
+[27.05.2022][08:02.26]INFO:Module "live.py" loaded
+[27.05.2022][08:02.26]INFO:Program started
+[27.05.2022][08:02.31]INFO:Module "gamesABC.py" loaded
+[27.05.2022][08:02.31]INFO:Module "guessGame.py" loaded
+[27.05.2022][08:02.31]INFO:Loading Guess Game at index 1
+[27.05.2022][08:02.31]INFO:Module "memoryGame.py" loaded
+[27.05.2022][08:02.31]INFO:Loading Memory Game at index 2
+[27.05.2022][08:02.31]INFO:Module "roulete.py" loaded
+[27.05.2022][08:02.31]INFO:Loading Roulete Game at index 3
+[27.05.2022][08:02.31]INFO:(3) games loaded
+[27.05.2022][08:02.37]INFO:Program ended.
+[27.05.2022][08:14.50]INFO:Module "misc.py" loaded
+[27.05.2022][08:14.50]INFO:Module "live.py" loaded
+[27.05.2022][08:14.50]INFO:Program started
+[27.05.2022][08:14.55]INFO:Module "gamesABC.py" loaded
+[27.05.2022][08:14.55]INFO:Module "guessGame.py" loaded
+[27.05.2022][08:14.55]INFO:Loading Guess Game at index 1
+[27.05.2022][08:14.55]INFO:Module "memoryGame.py" loaded
+[27.05.2022][08:14.55]INFO:Loading Memory Game at index 2
+[27.05.2022][08:14.55]INFO:Module "roulete.py" loaded
+[27.05.2022][08:14.55]INFO:Loading Roulete Game at index 3
+[27.05.2022][08:14.55]INFO:(3) games loaded
+[27.05.2022][08:15.02]INFO:Starting game<Guess Game>
+[27.05.2022][08:15.02]INFO:Game<Guess Game> with win
+[27.05.2022][08:15.06]INFO:Program ended.
+[27.05.2022][08:22.48]INFO:Module "misc.py" loaded
+[27.05.2022][08:22.48]INFO:Module "live.py" loaded
+[27.05.2022][08:22.48]INFO:Program started
+[27.05.2022][08:23.13]INFO:Module "gamesABC.py" loaded
+[27.05.2022][08:23.13]INFO:Module "guessGame.py" loaded
+[27.05.2022][08:23.13]INFO:Loading Guess Game at index 1
+[27.05.2022][08:23.13]INFO:Module "memoryGame.py" loaded
+[27.05.2022][08:23.13]INFO:Loading Memory Game at index 2
+[27.05.2022][08:23.13]INFO:Module "roulete.py" loaded
+[27.05.2022][08:23.13]INFO:Loading Roulete Game at index 3
+[27.05.2022][08:23.13]INFO:(3) games loaded
+[27.05.2022][08:23.28]INFO:Starting game<Guess Game> at (2) dificulty
+[27.05.2022][08:23.28]INFO:Game<Guess Game> at (2) dificulty ended with <win> result
+[27.05.2022][08:23.45]INFO:Program ended.
