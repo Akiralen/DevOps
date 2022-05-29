@@ -1,15 +1,25 @@
+
 import logging
+
 logging.basicConfig(
     format='%(asctime)s%(name)s%(levelname)s:%(message)s',
     datefmt='[%d.%m.%Y][%I:%M.%S]',
     level=logging.DEBUG,
     filename='event.log'
     )
+import functools
 import os
-from misc import clear_screen
+from time import sleep
 from random import randint
 from gameABC import games
 
+def clear_screen():
+    ### check OS and run correct command
+    if (os.name == 'nt'): 
+        os.system('cls')
+    elif (os.name == 'posix'):
+        os.system('clear')
+        
 
 class game(games):
     
@@ -18,19 +28,18 @@ class game(games):
     __sequence = []
     __guess = []
     
-    def __init__(self,dificulty : int):
-        self.__dificulty = dificulty
-        logging.debug(f"Object instatiated with dificulty <{self.__dificulty}>")
+    def __init__(self):
+        logging.debug("Object <memoryGame> instatiated")
     
     def __str__(self):
         return "Memory Game"
     
     def print_instructions(self):
-        print(f"Your objective in this game to guess number between 1 and {self.__dificulty}")
-        pass
+        print(f"Your objective in this game to memorrise sequence of {self.__dificulty} numbers\n\
+            You will be shown numbers afterward please enter sequence one by one")
    
     def print_result(self):
-        print(f"The number was <{self.__secretNumber}>, your guess <{self.__guess}>ּּ.")
+        print(f"The sequence was <{self.__sequence}>, your guess <{self.__guess}>ּּ.")
         if self.__result :
             print("You WIN!")
         else :
@@ -41,19 +50,36 @@ class game(games):
         for i in range(self.__dificulty):
             self.__sequence.append(randint(1,101))
         logging.debug(f'Set secret number as <{self.__sequence}>')
-    
-    def __get_guess(self):
-        while not self.__guess-1 in range(100) + 1:
+        
+    def __show_sequence(self):
+        clear_screen()
+        print("Get ready...")
+        os.system("pause")
+        for i in range(5):
             clear_screen()
-            try:
-                self.__guess = int(input("Your guess:"))
-            except:
-                self.__guess = -1
+            print(f"{5-i}...")
+            sleep(1)
+        for num in self.__sequence:
+            clear_screen()
+            print(f"<{num}>")
+            sleep(0.7)
+            
+    
+    def __get_list_from_user(self):
+        for i in range(self.__dificulty):
+            guess = -1
+            while not (guess-1) in range(100):
+                clear_screen()
+                try:
+                    guess = int(input(f"Number <{i+1}>:"))
+                except:
+                    guess = -1
+            self.__guess.append(guess)
             logging.debug(f'Players guess: <{self.__guess}>')
 
     def __compare_result(self):
-        if self.__guess == self.__secretNumber:
-            self.__result = True
+        if functools.reduce(lambda x, y : x and y, map(lambda p, q: p == q,self.__sequence,self.__guess), True): 
+           self.__result = True
         else:
             self.__result = False
     
@@ -63,15 +89,22 @@ class game(games):
         self.print_instructions()
         os.system("pause")
         self.__generate_sequence()
-        self.__get_guess()
+        self.__show_sequence()
+        self.__get_list_from_user()
         self.__compare_result()
         self.print_result()
         os.system("pause")
         
+    def get_result(self) :
+        return self.__result 
+    
+    def set_dificulty(self,dificulty):
+        self.__dificulty=dificulty
+        
 def main():
     logging.info('Started module "memoryGame.py" as stand alone')
-    dificulty = 1
-    g = game(dificulty)
+    dificulty = 3
+    g = game()
     name = 'Test'
     g.set_dificulty(dificulty)
     g.play(name)

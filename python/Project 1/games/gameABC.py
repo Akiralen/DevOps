@@ -1,6 +1,6 @@
 # Abstract method for games
 
-from abc import ABC, abstractmethod, abstractproperty
+from abc import ABC, abstractmethod
 import logging
 
 
@@ -13,7 +13,7 @@ class games(ABC):
         pass
     
     @abstractmethod
-    def __init__(self,dificulty : int) :
+    def __init__(self) :
         pass
     @abstractmethod
     def __str__(self) :
@@ -29,11 +29,12 @@ class games(ABC):
     def print_instructions(self):
         pass
     
+    @abstractmethod    
     def get_result(self) :
-        return self.__result 
-       
+        pass
+    @abstractmethod   
     def set_dificulty(self,dificulty):
-        self.dificulty=dificulty
+        pass
         
 if __name__ == '__main__':
     logging.error("This module can't be run as main")

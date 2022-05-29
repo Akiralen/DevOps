@@ -9,8 +9,13 @@ logging.basicConfig(
 import live
 import os
 
-from games.misc import clear_screen
-
+def clear_screen():
+    ### check OS and run correct command
+    if (os.name == 'nt'): 
+        os.system('cls')
+    elif (os.name == 'posix'):
+        os.system('clear')
+        
 ### Loading game objects in dictioanary
 
 def main():

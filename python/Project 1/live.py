@@ -1,8 +1,13 @@
 import logging
 import os,imp
 
-from games.misc import clear_screen
-
+def clear_screen():
+    ### check OS and run correct command
+    if (os.name == 'nt'): 
+        os.system('cls')
+    elif (os.name == 'posix'):
+        os.system('clear')
+   
 
 ### Loading game objects from files in path to dictioanary
 def load_library(path):
@@ -83,7 +88,7 @@ def load_game(path,name):
                 logging.info(f'Starting game<{games[selection-1]}> at ({dificulty}) dificulty')
                 games[selection-1].set_dificulty(dificulty)
                 games[selection-1].play(name)
-                logging.info(f"Game<{games[selection-1]}> at ({dificulty}) dificulty ended with <{('win' if games[selection-1].result else 'lose')}> result")
+                logging.info(f"Game<{games[selection-1]}> at ({dificulty}) dificulty ended with <{('win' if games[selection-1].get_result() else 'lose')}> result")
                 if games[selection-1].get_result():
                     wins += 1
                 else:
@@ -94,6 +99,7 @@ def load_game(path,name):
     
 def welcome():
     name=input("Hi \n Please enter your name:")
+    clear_screen()
     print(f"Hello {name} and welcome to the World of Games (WoG).\n\
         Here you can find many cool games to play.")
     os.system('pause')

@@ -1,51 +1,82 @@
-[27.05.2022][08:00.04]INFO:Module "misc.py" loaded
-[27.05.2022][08:00.04]INFO:Module "live.py" loaded
-[27.05.2022][08:00.04]INFO:Program started
-[27.05.2022][08:02.26]INFO:Module "misc.py" loaded
-[27.05.2022][08:02.26]INFO:Module "live.py" loaded
-[27.05.2022][08:02.26]INFO:Program started
-[27.05.2022][08:02.31]INFO:Module "gamesABC.py" loaded
-[27.05.2022][08:02.31]INFO:Module "guessGame.py" loaded
-[27.05.2022][08:02.31]INFO:Loading Guess Game at index 1
-[27.05.2022][08:02.31]INFO:Module "memoryGame.py" loaded
-[27.05.2022][08:02.31]INFO:Loading Memory Game at index 2
-[27.05.2022][08:02.31]INFO:Module "roulete.py" loaded
-[27.05.2022][08:02.31]INFO:Loading Roulete Game at index 3
-[27.05.2022][08:02.31]INFO:(3) games loaded
-[27.05.2022][08:02.37]INFO:Program ended.
-[27.05.2022][08:14.50]INFO:Module "misc.py" loaded
-[27.05.2022][08:14.50]INFO:Module "live.py" loaded
-[27.05.2022][08:14.50]INFO:Program started
-[27.05.2022][08:14.55]INFO:Module "gamesABC.py" loaded
-[27.05.2022][08:14.55]INFO:Module "guessGame.py" loaded
-[27.05.2022][08:14.55]INFO:Loading Guess Game at index 1
-[27.05.2022][08:14.55]INFO:Module "memoryGame.py" loaded
-[27.05.2022][08:14.55]INFO:Loading Memory Game at index 2
-[27.05.2022][08:14.55]INFO:Module "roulete.py" loaded
-[27.05.2022][08:14.55]INFO:Loading Roulete Game at index 3
-[27.05.2022][08:14.55]INFO:(3) games loaded
-[27.05.2022][08:15.02]INFO:Starting game<Guess Game>
-[27.05.2022][08:15.02]INFO:Game<Guess Game> with win
-[27.05.2022][08:15.06]INFO:Program ended.
-[27.05.2022][08:22.48]INFO:Module "misc.py" loaded
-[27.05.2022][08:22.48]INFO:Module "live.py" loaded
-[27.05.2022][08:22.48]INFO:Program started
-[27.05.2022][08:23.13]INFO:Module "gamesABC.py" loaded
-[27.05.2022][08:23.13]INFO:Module "guessGame.py" loaded
-[27.05.2022][08:23.13]INFO:Loading Guess Game at index 1
-[27.05.2022][08:23.13]INFO:Module "memoryGame.py" loaded
-[27.05.2022][08:23.13]INFO:Loading Memory Game at index 2
-[27.05.2022][08:23.13]INFO:Module "roulete.py" loaded
-[27.05.2022][08:23.13]INFO:Loading Roulete Game at index 3
-[27.05.2022][08:23.13]INFO:(3) games loaded
-[27.05.2022][08:23.28]INFO:Starting game<Guess Game> at (2) dificulty
-[27.05.2022][08:23.28]INFO:Game<Guess Game> at (2) dificulty ended with <win> result
-[27.05.2022][08:23.45]INFO:Program ended.
-[29.05.2022][06:02.29]rootINFO:Module "misc.py" loaded
-[29.05.2022][06:02.29]rootINFO:Module "gamesABC.py" loaded
-[29.05.2022][06:02.29]rootINFO:Started module "guessGame.py" as stand alone
-[29.05.2022][06:02.29]rootDEBUG:Object instatiated with dificulty <1>
-[29.05.2022][06:02.32]rootDEBUG:Set secret number as <1>
-[29.05.2022][06:02.34]rootDEBUG:Players guess: <2>
-[29.05.2022][06:02.35]rootDEBUG:Players guess: <1>
-[29.05.2022][06:02.36]rootINFO:Finished execution of module "guessGame.py"
+[29.05.2022|10:51.20]<root>INFO:Module "misc.py" loaded
+[29.05.2022|10:51.20]<root>INFO:Module "live.py" loaded
+[29.05.2022|10:51.20]<root>INFO:Program started
+[29.05.2022|10:51.25]<root>INFO:Module "gamesABC.py" loaded
+[29.05.2022|10:51.26]<root>INFO:Module "misc.py" loaded
+[29.05.2022|10:51.26]<root>WARNING:No games were loaded (0)
+[29.05.2022|10:51.26]<root>ERROR:Unable to run. No games exist
+[29.05.2022|10:51.26]<root>INFO:Program ended.
+[29.05.2022|10:52.14]<root>INFO:Module "misc.py" loaded
+[29.05.2022|10:52.14]<root>INFO:Module "live.py" loaded
+[29.05.2022|10:52.14]<root>INFO:Program started
+[29.05.2022|10:52.22]<root>INFO:Module "gamesABC.py" loaded
+[29.05.2022|10:52.22]<root>INFO:Module "guessGame.py" loaded
+[29.05.2022|10:52.22]<root>INFO:Loading Guess Game at index 1
+[29.05.2022|10:52.22]<root>INFO:Module "memoryGame.py" loaded
+[29.05.2022|10:52.22]<root>INFO:Loading Memory Game at index 2
+[29.05.2022|10:52.22]<root>INFO:Module "roulete.py" loaded
+[29.05.2022|10:52.22]<root>INFO:Loading Curency Roulette at index 3
+[29.05.2022|10:52.22]<root>INFO:(3) games loaded
+[29.05.2022|10:52.24]<root>INFO:Program ended.
+[29.05.2022|10:54.35]<root>INFO:Module "misc.py" loaded
+[29.05.2022|10:54.35]<root>INFO:Module "live.py" loaded
+[29.05.2022|10:54.35]<root>INFO:Program started
+[29.05.2022|10:54.42]<root>INFO:Module "gamesABC.py" loaded
+[29.05.2022|10:54.42]<root>INFO:Module "misc.py" loaded
+[29.05.2022|10:54.42]<root>WARNING:No games were loaded (0)
+[29.05.2022|10:54.42]<root>ERROR:Unable to run. No games exist
+[29.05.2022|10:54.42]<root>INFO:Program ended.
+[29.05.2022][10:56.09]rootINFO:Module "gamesABC.py" loaded
+[29.05.2022][10:56.09]rootINFO:Module "misc.py" loaded
+[29.05.2022][10:56.09]rootINFO:Started module "roulette.py" as stand alone
+[29.05.2022][10:56.09]rootDEBUG:Object <roulete> instatiated
+[29.05.2022][10:56.18]rootDEBUG:Set curency ammout set as <39>
+[29.05.2022][10:56.18]rootINFO:retrieved conversion rate USD-ILS<3.3571>
+[29.05.2022][11:00.28]rootINFO:Module "misc.py" loaded
+[29.05.2022][11:00.28]rootINFO:Module "gamesABC.py" loaded
+[29.05.2022][11:00.28]rootINFO:Started module "roulette.py" as stand alone
+[29.05.2022][11:00.28]rootDEBUG:Object <roulete> instatiated
+[29.05.2022][11:00.44]rootDEBUG:Set curency ammout set as <64>
+[29.05.2022][11:00.45]rootINFO:retrieved conversion rate USD-ILS<3.3571>
+[29.05.2022][11:00.47]rootDEBUG:Players guess: <5.0>
+[29.05.2022][11:00.51]rootINFO:Finished execution of module "roulette.py"
+[29.05.2022|11:01.03]<root>INFO:Module "misc.py" loaded
+[29.05.2022|11:01.03]<root>INFO:Module "live.py" loaded
+[29.05.2022|11:01.03]<root>INFO:Program started
+[29.05.2022|11:01.07]<root>INFO:Module "gamesABC.py" loaded
+[29.05.2022|11:01.07]<root>INFO:Module "misc.py" loaded
+[29.05.2022|11:01.07]<root>WARNING:No games were loaded (0)
+[29.05.2022|11:01.07]<root>ERROR:Unable to run. No games exist
+[29.05.2022|11:01.07]<root>INFO:Program ended.
+[29.05.2022|11:02.42]<root>INFO:Module "misc.py" loaded
+[29.05.2022|11:02.42]<root>INFO:Module "live.py" loaded
+[29.05.2022|11:02.42]<root>INFO:Program started
+[29.05.2022|11:02.45]<root>INFO:Module "gamesABC.py" loaded
+[29.05.2022|11:02.45]<root>INFO:Module "misc.py" loaded
+[29.05.2022|11:02.45]<root>WARNING:No games were loaded (0)
+[29.05.2022|11:02.45]<root>ERROR:Unable to run. No games exist
+[29.05.2022|11:02.45]<root>INFO:Program ended.
+[29.05.2022|11:12.28]<root>INFO:Module "live.py" loaded
+[29.05.2022|11:12.28]<root>INFO:Program started
+[29.05.2022|11:12.33]<root>INFO:Module "gamesABC.py" loaded
+[29.05.2022|11:12.33]<root>INFO:Module "memoryGame.py" loaded
+[29.05.2022|11:12.33]<root>INFO:Loading Memory Game at index 1
+[29.05.2022|11:12.33]<root>INFO:Module "roulete.py" loaded
+[29.05.2022|11:12.33]<root>INFO:Loading Curency Roulette at index 2
+[29.05.2022|11:12.33]<root>INFO:(2) games loaded
+[29.05.2022|11:12.39]<root>INFO:Program ended.
+[29.05.2022][11:12.52]rootINFO:Module "gamesABC.py" loaded
+[29.05.2022][11:12.52]rootINFO:Started module "guessGame.py" as stand alone
+[29.05.2022][11:12.52]rootDEBUG:Object <guess game>
+[29.05.2022][11:12.58]rootDEBUG:Set secret number as <1>
+[29.05.2022|11:14.31]<root>INFO:Module "live.py" loaded
+[29.05.2022|11:14.31]<root>INFO:Program started
+[29.05.2022|11:14.37]<root>INFO:Module "gamesABC.py" loaded
+[29.05.2022|11:14.37]<root>INFO:Module "guessGame.py" loaded
+[29.05.2022|11:14.37]<root>INFO:Loading Guess Game at index 1
+[29.05.2022|11:14.37]<root>INFO:Module "memoryGame.py" loaded
+[29.05.2022|11:14.37]<root>INFO:Loading Memory Game at index 2
+[29.05.2022|11:14.37]<root>INFO:Module "roulete.py" loaded
+[29.05.2022|11:14.37]<root>INFO:Loading Curency Roulette at index 3
+[29.05.2022|11:14.37]<root>INFO:(3) games loaded
+[29.05.2022|11:15.02]<root>INFO:Program ended.

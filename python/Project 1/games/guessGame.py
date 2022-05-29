@@ -6,11 +6,16 @@ logging.basicConfig(
     filename='event.log'
     )
 import os
-from misc import clear_screen
 from random import randint
 from gameABC import games
 
-
+def clear_screen():
+    ### check OS and run correct command
+    if (os.name == 'nt'): 
+        os.system('cls')
+    elif (os.name == 'posix'):
+        os.system('clear')
+        
 class game(games):
     
     __dificulty = 0
@@ -18,15 +23,14 @@ class game(games):
     __secretNumber = 0
     __guess = -1
     
-    def __init__(self,dificulty : int):
-        self.__dificulty = dificulty
-        logging.debug(f"Object instatiated with dificulty <{self.__dificulty}>")
+    def __init__(self):
+        logging.debug("Object <guess game>")
     
     def __str__(self):
         return "Guess Game"
     
     def print_instructions(self):
-        print(f"Your objective in this game to guess number between 1 and {self.__dificulty}")
+        print(f"Your objective in this game to guess number between 1 and {self.__dificulty}\n--------------------")
         pass
    
     def print_result(self):
@@ -44,7 +48,7 @@ class game(games):
         while not self.__guess-1 in range(self.__dificulty):
             clear_screen()
             try:
-                self.__guess = int(input("Your guess:"))
+                self.__guess = int(input(f"Your guess [1-{self.__dificulty}]:"))
             except:
                 self.__guess = -1
             logging.debug(f'Players guess: <{self.__guess}>')
@@ -57,7 +61,7 @@ class game(games):
     
     def play(self,name):
         print(f"{name} welcome to 'Guess Game'")
-        print(f"You have selected dificulty: {self.__dificulty}")
+        print(f"You have selected dificulty: {self.__dificulty}\n---------------------")
         self.print_instructions()
         os.system("pause")
         self.__generate_number()
@@ -66,10 +70,15 @@ class game(games):
         self.print_result()
         os.system("pause")
         
+    def get_result(self) :
+        return self.__result 
+    def set_dificulty(self,dificulty):
+        self.__dificulty = dificulty
+        
 def main():
     logging.info('Started module "guessGame.py" as stand alone')
     dificulty = 1
-    g = game(dificulty)
+    g = game()
     name = 'Test'
     g.set_dificulty(dificulty)
     g.play(name)
