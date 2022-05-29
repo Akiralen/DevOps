@@ -6,14 +6,14 @@ import logging
 
 class games(ABC):
     @property
-    def dificulty(self) :
+    def __dificulty(self) :
         pass
     @property
-    def result(self) :
+    def __result(self) :
         pass
     
     @abstractmethod
-    def __init__(self) :
+    def __init__(self,dificulty : int) :
         pass
     @abstractmethod
     def __str__(self) :
@@ -30,7 +30,7 @@ class games(ABC):
         pass
     
     def get_result(self) :
-        return self.result 
+        return self.__result 
        
     def set_dificulty(self,dificulty):
         self.dificulty=dificulty

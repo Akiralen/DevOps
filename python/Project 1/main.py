@@ -1,17 +1,15 @@
-from distutils.log import INFO
 import logging
-import logging.config
 logging.basicConfig(
-    format='%(asctime)s%(levelname)s:%(message)s',
-    datefmt='[%d.%m.%Y][%I:%M.%S]',
-    level=INFO,
+    format='%(asctime)s<%(name)s>%(levelname)s:%(message)s',
+    datefmt='[%d.%m.%Y|%I:%M.%S]',
+    level=logging.INFO,
     filename='event.log'
     )
 
 import live
 import os
 
-from misc import clear_screen
+from games.misc import clear_screen
 
 ### Loading game objects in dictioanary
 

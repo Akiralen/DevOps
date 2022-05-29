@@ -41,3 +41,11 @@
 [27.05.2022][08:23.28]INFO:Starting game<Guess Game> at (2) dificulty
 [27.05.2022][08:23.28]INFO:Game<Guess Game> at (2) dificulty ended with <win> result
 [27.05.2022][08:23.45]INFO:Program ended.
+[29.05.2022][06:02.29]rootINFO:Module "misc.py" loaded
+[29.05.2022][06:02.29]rootINFO:Module "gamesABC.py" loaded
+[29.05.2022][06:02.29]rootINFO:Started module "guessGame.py" as stand alone
+[29.05.2022][06:02.29]rootDEBUG:Object instatiated with dificulty <1>
+[29.05.2022][06:02.32]rootDEBUG:Set secret number as <1>
+[29.05.2022][06:02.34]rootDEBUG:Players guess: <2>
+[29.05.2022][06:02.35]rootDEBUG:Players guess: <1>
+[29.05.2022][06:02.36]rootINFO:Finished execution of module "guessGame.py"

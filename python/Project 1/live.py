@@ -1,7 +1,7 @@
 import logging
 import os,imp
 
-from misc import clear_screen
+from games.misc import clear_screen
 
 
 ### Loading game objects from files in path to dictioanary
