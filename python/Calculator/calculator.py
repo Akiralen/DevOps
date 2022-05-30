@@ -1,4 +1,5 @@
 def get_inner_expression(string : str):
+    # divides string in three parts where midle is first encased in '()'
     inner_string = ""
     for i, char in enumerate(string):
         if char == "(" :
@@ -15,7 +16,7 @@ def get_inner_expression(string : str):
 
 
 def calculator (calc_expression : str):
-    print(calc_expression)
+    # this calculator works on expresions using unsigned int using '+','-','/','*' operands and '()'
     if '(' in calc_expression:
        start,middle,end = get_inner_expression(calc_expression)
        return calculator(start + str(calculator(middle)) + end)
