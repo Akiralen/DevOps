@@ -1,4 +1,6 @@
 import logging
+
+from myutils import clear_screen
 logging.basicConfig(
     format='%(asctime)s%(name)s%(levelname)s:%(message)s',
     datefmt='[%d.%m.%Y][%I:%M.%S]',
@@ -11,12 +13,6 @@ import urllib.request
 from random import randint
 from gameABC import games
 
-def clear_screen():
-    ### check OS and run correct command
-    if (os.name == 'nt'): 
-        os.system('cls')
-    elif (os.name == 'posix'):
-        os.system('clear')
         
 class game(games):
     
