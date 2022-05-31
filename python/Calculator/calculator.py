@@ -16,16 +16,30 @@ def get_inner_expression(string : str):
 
 
 def calculator (calc_expression : str):
-    # this calculator works on expresions using unsigned int using '+','-','/','*' operands and '()'
+    # this calculator works on expresions of integers using '+','-','/','*' operands and '()'
     if '(' in calc_expression:
        start,middle,end = get_inner_expression(calc_expression)
        return calculator(start + str(calculator(middle)) + end)
         
+    calc_expression = calc_expression.replace('--','+')
+    calc_expression = calc_expression.replace('+-','-')    
+    calc_expression = calc_expression.replace('*-','*~')
+    calc_expression = calc_expression.replace('/-','/~')
+    
+    is_negative = 1 # 1 for positive -1 for negative
+    if calc_expression[0] == '-':
+        calc_expression = '~' + calc_expression[1:]
+    if calc_expression[0] == '~':
+        is_negative = -1
+        calc_expression = calc_expression[1:]
     if calc_expression.isdigit():
-        return int(calc_expression)
-    elif '-' in calc_expression:
+        return int(calc_expression) * is_negative
+    if is_negative < 0:
+        calc_expression = '~' + calc_expression
+       
+    if '-' in calc_expression:
         n1,n2 = calc_expression.split('-',1)
-        return calculator(n1) - calculator(n2)
+        return (calculator(n1) - calculator(n2))
     elif '+' in calc_expression:
         n1,n2 = calc_expression.split('+',1)
         return (calculator(n1) + calculator(n2))
@@ -40,7 +54,7 @@ def calculator (calc_expression : str):
         else:
             return calculator(n1) / n2
     else:
-        raise RuntimeError("Ilegal expression")
+        raise RuntimeError(f"Ilegal expression <{calc_expression}>")
 
 def _main():
     user_input=input("Please enter expression: ")
