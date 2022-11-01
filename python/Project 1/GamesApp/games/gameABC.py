@@ -1,4 +1,4 @@
-# Abstract method for games
+# Abstract method for games modules
 
 from abc import ABC, abstractmethod
 import logging

@@ -1,5 +1,6 @@
 import logging
 import os,imp
+import Scores.score as score
 
 def clear_screen():
     ### check OS and run correct command
@@ -24,8 +25,9 @@ def load_library(path):
                 if file_ext.lower() == '.py':
                     try:
                         py_mod = imp.load_source(mod_name, filepath)
-                    except:
+                    except Exception as e:
                         failed = True
+                        print (e)
                 elif file_ext.lower() == '.pyc':
                     try:
                         py_mod = imp.load_compiled(mod_name, filepath)
@@ -62,14 +64,13 @@ def load_game(path,name):
     except:
         gamesCount = 0
     if gamesCount > 0:       
-        wins = 0
-        loses = 0
+        curent_score = score.read_scores().get(name,0)
         
         selection = -1
         while not selection == 0:
             clear_screen()
             #print menu header
-            print(f"Curent player <{name}>. Wins:{wins} | Loses:{loses}")
+            print(f"Curent player <{name}>. Score:{curent_score}")
             #print games selection
             for i in range(gamesCount):
                 print(f"{i+1}: {games[i]}")
@@ -90,9 +91,10 @@ def load_game(path,name):
                 games[selection-1].play(name)
                 logging.info(f"Game<{games[selection-1]}> at ({dificulty}) dificulty ended with <{('win' if games[selection-1].get_result() else 'lose')}> result")
                 if games[selection-1].get_result():
-                    wins += 1
-                else:
-                    loses += 1
+                    win_score = (dificulty*5) + 5
+                    score.add_score(name,win_score)
+                    curent_score =+ win_score
+
     else:
         logging.error("Unable to run. No games exist")
     
@@ -108,4 +110,4 @@ def welcome():
 if __name__ == '__main__':
     logging.error("This module can't be run as main")
 else:
-    logging.info('Module "live.py" loaded')
+    logging.info('Module' + __name__ + 'loaded')
