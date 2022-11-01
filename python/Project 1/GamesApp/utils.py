@@ -1,6 +1,9 @@
 import logging
 import os
 
+SCORES_FILE_NAME = "Scores.txt"
+BAD_RETURN_CODE = 999
+
 def clear_screen():
     ### check OS and run correct command
     if (os.name == 'nt'): 

@@ -1,5 +1,5 @@
 import logging
-from games.myutils import clear_screen
+from utils import clear_screen
 logging.basicConfig(
     format='%(asctime)s<%(name)s>%(levelname)s:%(message)s',
     datefmt='[%d.%m.%Y|%I:%M.%S]',
