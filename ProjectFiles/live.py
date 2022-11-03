@@ -1,6 +1,6 @@
 import logging
 import os,imp
-import Scores.score as score
+import score
 
 def clear_screen():
     ### check OS and run correct command

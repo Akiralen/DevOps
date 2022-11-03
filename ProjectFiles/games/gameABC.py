@@ -6,9 +6,11 @@ import logging
 
 class games(ABC):
     @property
+    #games dificulty
     def __dificulty(self) :
         pass
     @property
+    #Success or failure of the game
     def __result(self) :
         pass
     
@@ -16,23 +18,29 @@ class games(ABC):
     def __init__(self) :
         pass
     @abstractmethod
+    #Returns game description when converted to string
     def __str__(self) :
         pass
     @abstractmethod
+    #Prints result of a game
     def print_result(self) :
         pass
     @abstractmethod
+    #main game body recieves player name
     def play(self,name) :
         pass
     
     @abstractmethod
+    #Prints game instruction
     def print_instructions(self):
         pass
     
-    @abstractmethod    
+    @abstractmethod
+    #returns result     
     def get_result(self) :
         pass
-    @abstractmethod   
+    @abstractmethod  
+    #sets game difficulty 
     def set_dificulty(self,dificulty):
         pass
         

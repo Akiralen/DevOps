@@ -1,0 +1,2 @@
+1. For part 1 and 2. Use classes for games that inherits abstract class
+2. For part 3 create High Score table
