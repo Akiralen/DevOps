@@ -5,7 +5,8 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                sh 'docker-compose build'
+                def test_image = docker.build("scoresapp:${env.BUILD_ID}","-f score.dockerfile .")
+                echo test_image
             }
         }
         stage('Test') {
