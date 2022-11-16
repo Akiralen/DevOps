@@ -80,3 +80,5 @@
 [29.05.2022|11:14.37]<root>INFO:Loading Curency Roulette at index 3
 [29.05.2022|11:14.37]<root>INFO:(3) games loaded
 [29.05.2022|11:15.02]<root>INFO:Program ended.
+[15.11.2022|06:13.21]<root>ERROR:Test Failed on: http://127.0.0.1:8080
+[15.11.2022|08:07.41]<root>INFO:Test Passed on: http://localhost:8777

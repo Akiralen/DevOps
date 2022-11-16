@@ -1,6 +1,6 @@
 import logging
 
-from utils import clear_screen
+from utils.utils import clear_screen
 logging.basicConfig(
     format='%(asctime)s%(name)s%(levelname)s:%(message)s',
     datefmt='[%d.%m.%Y][%I:%M.%S]',
@@ -9,7 +9,7 @@ logging.basicConfig(
     )
 import os
 from random import randint
-from gameABC import games
+from utils.gameABC import games
 
         
 class game(games):

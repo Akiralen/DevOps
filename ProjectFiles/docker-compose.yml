@@ -1,0 +1,21 @@
+version: "3.9"
+services:
+  scoreapp:
+    build: 
+      context: ./
+      dockerfile: score.dockerfile
+    environment:
+      - External_Port=${scoreapp_port}
+      - External_IP=${scoreapp_ip}
+    container_name: scoreapp
+    volumes:
+      - scores:/scores
+    ports:
+      - ${scoreapp_eport}:${scoreapp_port}
+    restart: always
+
+
+volumes:
+  scores:
+    name: scores_volume
+    external: true

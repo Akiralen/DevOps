@@ -10,13 +10,13 @@ logging.basicConfig(
     level=logging.INFO,
     filename='event.log'
     )
-    
-path = "c:\selenium\chromedriver.exe"
+
+win_path = "c:\selenium\chromedriver.exe"
 
 
 def main(argv):
-    app_ip = "127.0.0.1"
-    app_port = "8080" 
+    app_ip = "localhost"
+    app_port = "8777" 
     #check arguments for ip/port override
     try:
         opts, args = getopt.getopt(argv, "hi:p:", ["ip=", "port="])
@@ -41,12 +41,18 @@ def main(argv):
 
 
 def test_scores_service(landing_page):
-    chrome_options = Options()
-    chrome_options.add_argument("--headless")
-    chrome_options.add_argument("--window-size=1920x1080")
+    driver_location = '/usr/bin/chromedriver'
+    binary_location = '/usr/bin/google-chrome'
+
+    options = webdriver.ChromeOptions()
+    options.binary_location = binary_location
+
+    options.add_argument("--headless")
+    options.add_argument("--window-size=1920x1080")
 
     try:
-        driver = webdriver.Chrome(chrome_options=chrome_options, executable_path=path)
+        driver = webdriver.Chrome(executable_path=driver_location,options=options)
+        # driver = webdriver.Chrome(chrome_options=chrome_options, executable_path=win_path)
         driver.get(landing_page)
         elem = driver.find_element(By.ID, "score")
         return len(elem.text) > 0

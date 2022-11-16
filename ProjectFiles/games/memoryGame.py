@@ -11,7 +11,7 @@ import functools
 import os
 from time import sleep
 from random import randint
-from gameABC import games
+from utils.gameABC import games
 
 def clear_screen():
     ### check OS and run correct command
