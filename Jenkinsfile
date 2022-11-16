@@ -5,8 +5,10 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                def test_image = docker.build("scoresapp:${env.BUILD_ID}","-f score.dockerfile .")
-                echo test_image
+                script{
+                    scoreapp_image = docker.build ("scoreapp:${env.BUILD_ID}","-f score.dockerfile .")
+                }
+                echo scoreapp_image
             }
         }
         stage('Test') {
