@@ -6,8 +6,9 @@ pipeline {
             steps {
                 echo 'Building..'
                 script{
-                    sh"docker build -t scoreapp:${env.BUILD_ID} -f score.dockerfile ."
+                    scoreapp_image = docker.build ("scoreapp:${env.BUILD_ID}","-f score.dockerfile .")
                 }
+                echo scoreapp_image.id
             }
         }
         stage('Test') {
@@ -16,8 +17,8 @@ pipeline {
             }
             steps {
                 echo 'Testing..'
-                sh "docker run -p 8080:8777 -v test /app/scores scoreapp:${env.BUILD_ID}"
-                sh "docker cp ./scores/scores.txt ${scoreapp_container.id}:/app/scores/"
+                scoreapp_container = scoreapp_image.run('-p 8080:8777 -v test:/app/scores')
+                sh "docker cp ./scores/scores.txt ${scoreapp_container.id}:/app/scores"
             }
         }
         stage('Deploy') {
