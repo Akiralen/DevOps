@@ -8,7 +8,6 @@ pipeline {
                 script{
                     sh"docker build -t scoreapp:${env.BUILD_ID} -f score.dockerfile ."
                 }
-                echo scoreapp_image.id
             }
         }
         stage('Test') {
