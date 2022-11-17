@@ -14,7 +14,6 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing..'
-                scoreapp_image.
             }
         }
         stage('Deploy') {
