@@ -23,6 +23,7 @@ pipeline {
                 sh "docker cp ./scores/scores.txt ${scoreapp_container.id}:/app/scores"
                 sh "/usr/bin/python3 e2e.py"
                 script{
+                    scoreapp_container.stop()
                 }
             }
         }
@@ -35,19 +36,6 @@ pipeline {
                     }
                 }
             }
-        }
-    }
-    post {
-        always {
-            script {
-                echo coreapp_container.stop()
-            }
-        }
-        failure {
-            echo 'Failure'
-        }
-        changed {
-            echo 'Changed'
         }
     }
 }
