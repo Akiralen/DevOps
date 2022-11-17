@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Test') {
             when{
-                environment name: 'run_test', value: true
+                environment name: 'run_test', value: 'true'
             }
             steps {
                 echo 'Testing..'
