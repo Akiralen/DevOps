@@ -21,11 +21,17 @@ pipeline {
                     scoreapp_container = scoreapp_image.run('-p 8777:8080 -v test:/app/scores')
                 }
                 sh "docker cp ./scores/scores.txt ${scoreapp_container.id}:/app/scores"
+                sh "python e2e.py"
             }
         }
         stage('Deploy') {
             steps {
-                echo 'Deploying....'
+                when{
+                    echo 'Deploying....'
+                    script{
+                        scoreapp_image.push
+                    }
+                }
             }
         }
     }
