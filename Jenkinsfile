@@ -23,7 +23,6 @@ pipeline {
                 sh "docker cp ./scores/scores.txt ${scoreapp_container.id}:/app/scores"
                 sh "/usr/bin/python3 e2e.py"
                 script{
-                    scoreapp_container.stop
                 }
             }
         }
@@ -32,9 +31,16 @@ pipeline {
                 when{
                     echo 'Deploying....'
                     script{
-                        scoreapp_image.push
+                        scoreapp_image.push()
                     }
                 }
+            }
+        }
+    }
+    post {
+        always {
+            script{
+                scoreapp_container.stop()
             }
         }
     }
