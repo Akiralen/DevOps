@@ -18,7 +18,7 @@ pipeline {
             steps {
                 echo 'Testing..'
                 script{
-                    scoreapp_container = scoreapp_image.run('-p 8080:8777 -v test:/app/scores')
+                    scoreapp_container = scoreapp_image.run('-p 8777:8080 -v test:/app/scores')
                 }
                 sh "docker cp ./scores/scores.txt ${scoreapp_container.id}:/app/scores"
             }
