@@ -22,6 +22,9 @@ pipeline {
                 }
                 sh "docker cp ./scores/scores.txt ${scoreapp_container.id}:/app/scores"
                 sh "/usr/bin/python3/python3 e2e.py"
+                script{
+                    scoreapp_container.close
+                }
             }
         }
         stage('Deploy') {
