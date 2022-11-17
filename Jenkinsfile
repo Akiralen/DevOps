@@ -46,7 +46,7 @@ pipeline {
         failure {
             echo 'Failure'
         }
-        changed {`
+        changed {
             echo 'Changed'
         }
     }
