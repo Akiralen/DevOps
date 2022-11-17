@@ -1,3 +1,4 @@
+# todo: Add parametrization and  comments
 pipeline {
     agent any
 
@@ -27,14 +28,15 @@ pipeline {
                 }
             }
         }
-        stage('Deploy') {
+        stage('Deploy') { 
+            when{
+                environment name 'image_push', value: 'true'
+            }
             steps {
-                when{
                     echo 'Deploying....'
                     script{
                         scoreapp_image.push()
                     }
-                }
             }
         }
     }
