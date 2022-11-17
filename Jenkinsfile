@@ -12,6 +12,9 @@ pipeline {
             }
         }
         stage('Test') {
+            when{
+                env.run_test
+            }
             steps {
                 echo 'Testing..'
             }
