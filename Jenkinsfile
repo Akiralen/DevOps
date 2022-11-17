@@ -39,7 +39,9 @@ pipeline {
     }
     post {
         always {
-            script scoreapp_container.stop()
+            script {
+                echo coreapp_container.stop()
+            }
         }
         failure {
             echo 'Failure'
